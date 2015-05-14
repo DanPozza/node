@@ -1,45 +1,11 @@
 var express = require('express');
 var http = require('http');
 var app = express();
-var bodyParser = require('body-parser');
 
-var multer= require ('multer');
-
-app.use(multer());
-
-
-
-
-var objectArray = [{uuid: 'xxx-yyy-zzz', position: 'muse'}];
-objectArray.push({uuid: 'aaa-bbb-ccc', position: 'school'});
-
-
-
-app.use(bodyParser.urlencoded({ extended: true }));// initialize appimport java.io.IOException;
-;
 fs = require('fs');
 
 
 var exec = require('child_process').exec;
-
-exec("ssh -i /home/luca/nico/nico.pem ubuntu@52.24.83.205", function (error, stdout, stderr) {
-  // output is in stdout
-console.log(stdout);console.log(error);console.log(stderr);
-   	 
-
-});
-/*app.get('/bo', function (req, res) {
-  exec("ssh -i /home/luca/nico/nico.pem ubuntu@52.24.83.205", function (error, stdout, stderr) {
-  // output is in stdout
-console.log(stdout);console.log(error);console.log(stderr);
-   	 
-
-});
-console.log(req.body);
-console.log(req.files);
-});*/
-
-
 
 
 app.get('/bo2/:lat/:long', function (req, response) {
