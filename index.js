@@ -1,5 +1,6 @@
-
+var express = require('express');
 var http = require('http');
+var app = express();
 
 fs = require('fs');
 
@@ -41,29 +42,13 @@ console.log(stdout);console.log(error);console.log(stderr);
         
 });
 
-var os = require('os');
-var ifaces = os.networkInterfaces();
-
-Object.keys(ifaces).forEach(function (ifname) {
-  var alias = 0
-    ;
-
-  ifaces[ifname].forEach(function (iface) {
-
-   if((ifname== 'wlan0')&&(iface.family== 'IPv4'))
-{//console.log(ifname, iface.address); 
-ip= iface.address; }
-   
-  });
-});
-
 
 var server = app.listen(process.env.PORT||3000, function () {
 
   var host = server.address().address;
    port = server.address().port;
 
-  console.log('Beacons server listening at http://%s:%s', ip, port);
+  console.log('Beacons server listening at http://%s:%s', host, port);
 
 });
 
