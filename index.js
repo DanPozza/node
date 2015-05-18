@@ -8,7 +8,7 @@ fs = require('fs');
 var exec = require('child_process').exec;
 
 
-app.get('/bo2/:lat/:long', function (req, response) {
+app.get('/:lat/:long', function (req, response) {
    var lat = (req.params.lat);
 var long = (req.params.long);
        console.log(req.url);
@@ -48,7 +48,7 @@ var server = app.listen(process.env.PORT||3000, function () {
   var host = server.address().address;
    port = server.address().port;
 
-  console.log('Beacons server listening at http://%s:%s', host, port);
+  console.log('server listening at http://%s:%s', host, port);
 
 });
 
