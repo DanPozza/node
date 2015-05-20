@@ -37,7 +37,7 @@ exec("curl http://127.0.0.1:4242/fences", function (error, stdout, stderr) {
   // output is in stdout
 console.log(stdout);console.log(error);console.log(stderr);
    	response.send(stdout); 
-   	
+   	console.log(stdout);
    	if(stdout == '{"in_fence":true}' )
 		{console.log("son dentro al true");
 	
