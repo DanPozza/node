@@ -75,6 +75,28 @@ transporter.sendMail(message, function(error, info) {
 });
 });
 
+app.get('/checkfences', function (req, response) {
+  // var uuid = (req.params.uuid);
+       console.log(req.url);
+
+    
+   response.contentType('text/html');
+   
+   
+exec("curl http://127.0.0.1:4242/fences", function (error, stdout, stderr) {
+  // output is in stdout
+console.log(stdout);console.log(error);console.log(stderr);
+   	response.send(stdout); 
+   	console.log(stdout);
+   	
+
+});
+
+
+
+
+
+
 var server = app.listen(process.env.PORT||3000, function () {
 
   var host = "192.168.1.107";
