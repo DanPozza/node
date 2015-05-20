@@ -37,15 +37,12 @@ exec("curl http://127.0.0.1:4242/fences", function (error, stdout, stderr) {
   // output is in stdout
 console.log(stdout);console.log(error);console.log(stderr);
    	response.send(stdout); 
-
-});
-   
-        
-});
-
-
-
-
+   	
+   	if(stdout == '{"in_fence":true}' )
+		{console.log("son dentro al true");
+	
+	//
+	
 var nodemailer = require('nodemailer');
 
 // Create a SMTP transporter object
@@ -73,7 +70,7 @@ var message = {
     subject: 'VIOLAZIONE AREA PROTETTA', //
 
     // plaintext body
-    text: 'Attenzione è stata violata la zona protetta da' + prs + ' persone alle coordinate: latitudine :' + lat+ ' e longitudine : '+long 
+    text: 'Attenzione è stata violata la zona protetta da ' + prs+ 'persone a latitudine :' + lat+ ' e longitudine : '+long 
 };
 
 console.log('Sending Mail');
@@ -86,6 +83,16 @@ transporter.sendMail(message, function(error, info) {
     console.log('Message sent successfully!');
     console.log('Server responded with "%s"', info.response);
 });
+		}
+
+});
+   
+        
+});
+
+
+
+
 
 
 
