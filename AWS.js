@@ -70,30 +70,17 @@ transporter.sendMail(message, function(error, info) {
     console.log('Server responded with "%s"', info.response);
 });*/
 	
-		
-var nodemailer = require('nodemailer');
-var ses = require('nodemailer-ses-transport');
-var transporter = nodemailer.createTransport(ses({
- 	accessKeyId: 'AKIAITJ5HXNR4JC3QJMA',
-    secretAccessKey: 'Al+zthZWoD2R2lCtKw+F8QK4Hoj6renMOPGrhyAjnn88'
-    
-}));
-transporter.sendMail({
-    from: 'nikotesta@gmail.com',
-    to: 'danpozza21@hotmail.it',
-    subject: 'hello',
-    text: 'hello world!'
-    
-    console.log('Sending Mail');
-transporter.sendMail(message, function(error, info) {
-    if (error) {
-        console.log('Errore durante invio mail. Disattivare avast ');
-        console.log(error.message);
-        return;
-    }
-    console.log('Message sent successfully!');
-    console.log('Server responded with "%s"', info.response);
+var ses = require('node-ses')
+  , client = ses.createClient({ key: 'AKIAITJ5HXNR4JC3QJMA', secret: 'Al+zthZWoD2R2lCtKw+F8QK4Hoj6renMOPGrhyAjnn88' });
+
+client.sendemail({
+   to: 'nikotesta@gmail.com'
+ , from: 'nikotesta@gmail.com'
+ , subject: 'greetings'
+ , message: 'your <b>message</b> goes here'
+ , altText: 'plain text'
 });		
+
 	}
 });
 });
