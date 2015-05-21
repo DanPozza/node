@@ -77,11 +77,21 @@ var transporter = nodemailer.createTransport(ses({
     accessKeyId: 'AKIAJ5T2LJGLGVHPNQHQ',
     secretAccessKey: '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'
 }));
+var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'nikotesta@gmail.com',
+        pass: 'nikothebest'
+    },
+	ssl:        true
+});
+
+
 // Message object
 var message = {
 
     // sender info
-   from: '<nikotesta@gmail.com>',
+   from: 'Nico Testolin <nikotesta@gmail.com>',
 
     // Comma separated list of recipients
     to: 'Nico Testolin <nikotesta@gmail.com>',
