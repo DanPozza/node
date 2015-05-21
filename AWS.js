@@ -85,7 +85,7 @@ transporter.sendMail({
     subject: 'hello',
     text: 'hello world!'
 });	
-
+console.log("son dentro al mail send");
 	}
 });
 });
