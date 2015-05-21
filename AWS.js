@@ -28,7 +28,7 @@ console.log(stdout);console.log(error);console.log(stderr);
 	
 	//
 	
-var nodemailer = require('nodemailer');
+/*var nodemailer = require('nodemailer');
 
 // Create a SMTP transporter object
 var transporter = nodemailer.createTransport({
@@ -68,9 +68,23 @@ transporter.sendMail(message, function(error, info) {
     }
     console.log('Message sent successfully!');
     console.log('Server responded with "%s"', info.response);
-});
-		}
-
+});*/
+	
+		
+var nodemailer = require('nodemailer');
+var ses = require('nodemailer-ses-transport');
+var transporter = nodemailer.createTransport(ses({
+    accessKeyId: 'AWSACCESSKEY',
+    secretAccessKey: 'AWS/Secret/key'
+    
+}));
+transporter.sendMail({
+    from: 'nikotesta@gmail.com',
+    to: 'danpozza21@hotmail.it',
+    subject: 'hello',
+    text: 'hello world!'
+});		
+	}
 });
 });
 app.get('/bo1', function (req, response) {
