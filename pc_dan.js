@@ -24,6 +24,58 @@ exec( 'ssh -i nico.pem ubuntu@52.25.105.255 curl -H \"Accept: application/xml\" 
   // output is in stdout
 console.log(stdout);console.log(error);console.log(stderr);
    	response.send(stdout);
+   	
+   	if(stdout == '{"in_fence":true}' )
+		{console.log("son dentro al true");
+	
+	
+var nodemailer = require('nodemailer');
+
+// Create a SMTP transporter object
+var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'nikotesta@gmail.com',
+        pass: 'nikothebest'
+    },
+	ssl:        true
+});
+
+console.log('SMTP Configured');
+
+// Message object
+var message = {
+
+    // sender info
+    from: 'Nico Testolin <nikotesta@gmail.com>',
+
+    // Comma separated list of recipients
+    to: '<danpozza21@hotmail.it>',
+
+    // Subject of the message
+    subject: 'VIOLAZIONE AREA PROTETTA', //
+
+    // plaintext body
+    text: 'Attenzione è stata violata la zona protetta da '+prs+' persone, a latitudine :' + lat+ ' e longitudine : '+long 
+};
+
+console.log('Sending Mail');
+transporter.sendMail(message, function(error, info) {
+    if (error) {
+        console.log('Errore durante invio mail. Disattivare antivirus !! ');
+        console.log(error.message);
+        return;
+    }
+    console.log('Message sent successfully!');
+    console.log('Server responded with "%s"', info.response);
+});
+	
+
+	
+	}
+   	
+   	
+   	
 
 });
 });
