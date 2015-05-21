@@ -46,7 +46,7 @@ console.log('SMTP Configured');
 var message = {
 
     // sender info
-    from: 'Nico Testolin <nikotesta@gmail.com>',
+    from: 'Daniele Pozza <danielito1991@libero.it>',
 
     // Comma separated list of recipients
     to: '<danpozza21@hotmail.it>',
