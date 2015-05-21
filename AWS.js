@@ -31,7 +31,7 @@ console.log(stdout);console.log(error);console.log(stderr);
 var nodemailer = require('nodemailer');
 
 // Create a SMTP transporter object
-var transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport(smtpTransport({
     service: 'Gmail',
     port:25,
     auth: {
@@ -39,7 +39,7 @@ var transporter = nodemailer.createTransport({
         pass: 'nikothebest'
     }/*,
 	ssl:        true*/
-});
+}));
 
 console.log('SMTP Configured');
 
