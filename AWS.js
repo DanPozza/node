@@ -1,3 +1,5 @@
+//NODEJS RUNNING ON AWS SERVER MACHINE
+
 var express = require('express');
 var http = require('http');
 var app = express();
@@ -8,10 +10,10 @@ fs = require('fs');
 var exec = require('child_process').exec;
 
 
-app.get('/:lat/:long/:prs', function (req, response) {
+app.get('/:lat/:long', function (req, response) {
    var lat = (req.params.lat);
 var long = (req.params.long);
-var prs = (req.params.prs);
+
        console.log(req.url);
 
     
@@ -26,7 +28,7 @@ console.log(stdout);console.log(error);console.log(stderr);
    
         
 });
-app.get('/bo1', function (req, response) {
+app.get('/checkfences', function (req, response) {
   // var uuid = (req.params.uuid);
        console.log(req.url);
 
