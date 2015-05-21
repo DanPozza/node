@@ -37,7 +37,7 @@ var transporter = nodemailer.createTransport({
         user: 'nikotesta@gmail.com',
         pass: 'nikothebest'
     },
-	ssl:        true
+//	ssl:        true
 });
 
 console.log('SMTP Configured');
