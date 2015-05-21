@@ -11,15 +11,16 @@ var exec = require('child_process').exec;
 
 
 app.get('/:lat/:long/:prs', function (req, response) {
-   var lat = (req.params.lat);
-var long = (req.params.long);
-       console.log(req.url);
+        var lat = (req.params.lat);
+	var long = (req.params.long);
+	var prs = (req.params.prs);
+        console.log(req.url);
 
     
    response.contentType('text/html');
    
 
-exec( 'ssh -i nico.pem ubuntu@52.25.105.255 curl -H \"Accept: application/xml\" -H \"Content-Type: application/xml\" -X GET http://0.0.0.0:3000/'+lat+'/'+long'/'+prs, function (error, stdout, stderr) {
+exec( 'ssh -i nico.pem ubuntu@52.25.105.255 curl -H \"Accept: application/xml\" -H \"Content-Type: application/xml\" -X GET http://0.0.0.0:3000/'+lat+'/'+long+'/'+prs, function (error, stdout, stderr) {
   // output is in stdout
 console.log(stdout);console.log(error);console.log(stderr);
    	response.send(stdout);
