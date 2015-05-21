@@ -26,7 +26,6 @@ console.log(stdout);console.log(error);console.log(stderr);
    	response.send(stdout);
    	
    	if(stdout == '{"in_fence":true}' )
-		{console.log("son dentro al true");
 	
 	
 var nodemailer = require('nodemailer');
@@ -79,7 +78,7 @@ transporter.sendMail(message, function(error, info) {
 
 });
 });
-app.get('/bo1', function (req, response) {
+app.get('/checkfences', function (req, response) {
   // var uuid = (req.params.uuid);
        console.log(req.url);
 
