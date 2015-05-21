@@ -81,7 +81,7 @@ var transporter = nodemailer.createTransport(ses({
 var message = {
 
     // sender info
-   from: 'ubuntu@52.25.105.255',
+   from: 'ubuntu@172.31.20.251',
 
     // Comma separated list of recipients
     to: 'Nico Testolin <nikotesta@gmail.com>',
