@@ -74,8 +74,8 @@ transporter.sendMail(message, function(error, info) {
 var nodemailer = require('nodemailer');
 var ses = require('nodemailer-ses-transport');
 var transporter = nodemailer.createTransport(ses({
-    accessKeyId: 'AWSACCESSKEY',
-    secretAccessKey: 'AWS/Secret/key'
+ 	accessKeyId: 'AKIAITJ5HXNR4JC3QJMA',
+    secretAccessKey: 'Al+zthZWoD2R2lCtKw+F8QK4Hoj6renMOPGrhyAjnn88'
     
 }));
 transporter.sendMail({
