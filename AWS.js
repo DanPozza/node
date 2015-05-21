@@ -70,7 +70,7 @@ transporter.sendMail(message, function(error, info) {
     console.log('Server responded with "%s"', info.response);
 });*/
 	
-vvar nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 var ses = require('nodemailer-ses-transport');
 var transporter = nodemailer.createTransport(ses({
     accessKeyId: 'AKIAITJ5HXNR4JC3QJMA',
