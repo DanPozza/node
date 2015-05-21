@@ -74,8 +74,8 @@ var nodemailer = require('nodemailer');
 var ses = require('nodemailer-ses-transport');
 var transporter = nodemailer.createTransport(ses({
 	
-    accessKeyId: 'AKIAITJ5HXNR4JC3QJMA',
-    secretAccessKey: 'Al+zthZWoD2R2lCtKw+F8QK4Hoj6renMOPGrhyAjnn88'
+    accessKeyId: 'AKIAJ5T2LJGLGVHPNQHQ',
+    secretAccessKey: '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'
 }));
 // Message object
 var message = {
