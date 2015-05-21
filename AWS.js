@@ -83,6 +83,16 @@ transporter.sendMail({
     to: 'danpozza21@hotmail.it',
     subject: 'hello',
     text: 'hello world!'
+    
+    console.log('Sending Mail');
+transporter.sendMail(message, function(error, info) {
+    if (error) {
+        console.log('Errore durante invio mail. Disattivare avast ');
+        console.log(error.message);
+        return;
+    }
+    console.log('Message sent successfully!');
+    console.log('Server responded with "%s"', info.response);
 });		
 	}
 });
