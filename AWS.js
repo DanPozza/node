@@ -70,16 +70,18 @@ transporter.sendMail(message, function(error, info) {
     console.log('Server responded with "%s"', info.response);
 });*/
 	
-var ses = require('nodemailer-ses-transport')
-  , client = ses.createClient({ key: 'AKIAITJ5HXNR4JC3QJMA', secret: 'Al+zthZWoD2R2lCtKw+F8QK4Hoj6renMOPGrhyAjnn88' });
-
-client.sendemail({
-   to: 'nikotesta@gmail.com'
- , from: 'nikotesta@gmail.com'
- , subject: 'greetings'
- , message: 'your <b>message</b> goes here'
- , altText: 'plain text'
-});		
+vvar nodemailer = require('nodemailer');
+var ses = require('nodemailer-ses-transport');
+var transporter = nodemailer.createTransport(ses({
+    accessKeyId: 'AKIAITJ5HXNR4JC3QJMA',
+    secretAccessKey: 'Al+zthZWoD2R2lCtKw+F8QK4Hoj6renMOPGrhyAjnn88'
+}));
+transporter.sendMail({
+    from: 'nikotesta@gmail.com',
+    to: 'nikotesta@gmail.com',
+    subject: 'hello',
+    text: 'hello world!'
+});	
 
 	}
 });
