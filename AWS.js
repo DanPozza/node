@@ -32,10 +32,10 @@ var nodemailer = require('nodemailer');
 
 // Create a SMTP transporter object
 var transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'Libero',
     auth: {
-        user: 'nikotesta@gmail.com',
-        pass: 'nikothebest'
+        user: 'danielito1991@libero.it',
+        pass: 'f92ck75s1'
     },
 	ssl:        true
 });
