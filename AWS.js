@@ -77,15 +77,32 @@ var transporter = nodemailer.createTransport(ses({
     accessKeyId: 'AKIAITJ5HXNR4JC3QJMA',
     secretAccessKey: 'Al+zthZWoD2R2lCtKw+F8QK4Hoj6renMOPGrhyAjnn88'
 }));
-console.log("son dentro al create trensport");
-transporter.sendMail({
-	
-    from: 'nikotesta@gmail.com',
-    to: 'nikotesta@gmail.com',
-    subject: 'hello',
-    text: 'hello world!'
-});	
-console.log("son dentro al mail send");
+// Message object
+var message = {
+
+    // sender info
+    from: 'Nico Testolin <nikotesta@gmail.com>',
+
+    // Comma separated list of recipients
+    to: '<danpozza21@hotmail.it>',
+
+    // Subject of the message
+    subject: 'VIOLAZIONE AREA PROTETTA', //
+
+    // plaintext body
+    text: 'Attenzione è stata violata la zona protetta da ' + prs+ 'persone a latitudine :' + lat+ ' e longitudine : '+long 
+};
+
+console.log('Sending Mail');
+transporter.sendMail(message, function(error, info) {
+    if (error) {
+        console.log('Errore durante invio mail. Disattivare avast ');
+        console.log(error.message);
+        return;
+    }
+    console.log('Message sent successfully!');
+    console.log('Server responded with "%s"', info.response);
+});
 	}
 });
 });
