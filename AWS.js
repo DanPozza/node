@@ -23,7 +23,9 @@ exec("curl http://127.0.0.1:4242/relative-to-fence/554b5ef24eda842453000001/"+la
 console.log(stdout);console.log(error);console.log(stderr);
    	response.send(stdout);
 });
-
+   
+        
+});
 app.get('/bo1', function (req, response) {
   // var uuid = (req.params.uuid);
        console.log(req.url);
@@ -38,11 +40,10 @@ console.log(stdout);console.log(error);console.log(stderr);
    	response.send(stdout); 
    	console.log(stdout);
    	
-
 });
    
-
-
+        
+});
 
 
 var server = app.listen(process.env.PORT||3000, function () {
