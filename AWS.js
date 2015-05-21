@@ -73,12 +73,13 @@ transporter.sendMail(message, function(error, info) {
 var nodemailer = require('nodemailer');
 var ses = require('nodemailer-ses-transport');
 var transporter = nodemailer.createTransport(ses({
-	console.log("son dentro al create trensport");
+	
     accessKeyId: 'AKIAITJ5HXNR4JC3QJMA',
     secretAccessKey: 'Al+zthZWoD2R2lCtKw+F8QK4Hoj6renMOPGrhyAjnn88'
 }));
+console.log("son dentro al create trensport");
 transporter.sendMail({
-	console.log("son dentro al send mail");
+	
     from: 'nikotesta@gmail.com',
     to: 'nikotesta@gmail.com',
     subject: 'hello',
