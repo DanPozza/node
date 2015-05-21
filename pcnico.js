@@ -8,23 +8,32 @@ fs = require('fs');
 var exec = require('child_process').exec;
 
 
-app.get('/:lat/:long', function (req, response) {
+app.get('/geofence', function (req, response) {
    var lat = (req.params.lat);
 var long = (req.params.long);
        console.log(req.url);
   
    response.contentType('text/html');
+
+
+var latlong = fs.readFileSync('./LATeLONG.txt').toString().split("\n");
+for(i in latlong) {
+    console.log(latlong[i]);
+}
+var persone = fs.readFileSync('./Npersone.txt').toString().split("\n");
+for(i in persone) {
+    console.log(persone[i]);
+}
+
    
  //settare l'indirizzo IP del pc che fa da ponte server  
-exec("curl http://192.168.1.108:3000/"+lat+'/'+long, function (error, stdout, stderr) {
+exec("curl http://192.168.1.108:3000/"+ latlong+'/'+ persone  , function (error, stdout, stderr) {
   // output is in stdout
 console.log(stdout);console.log(error);console.log(stderr);
    	response.send(stdout);
 	console.log(stdout);
-	if(stdout == '{"in_fence":true}' )
+	/*if(stdout == '{"in_fence":true}' )
 		{console.log("son dentro al true");
-	
-	////possiamo fare il mondo zio porco!!!!
 	
 var nodemailer = require('nodemailer');
 
@@ -59,7 +68,7 @@ var message = {
 console.log('Sending Mail');
 transporter.sendMail(message, function(error, info) {
     if (error) {
-        console.log('Errore durante invio mail. Disattivare avast ');
+        console.log('Errore durante invio mail. Disattivare antivirus !! ');
         console.log(error.message);
         return;
     }
@@ -69,37 +78,15 @@ transporter.sendMail(message, function(error, info) {
 	
 
 	
-	}
+	}*/
 		
 
 });
 });
 
-app.get('/checkfences', function (req, response) {
-  // var uuid = (req.params.uuid);
-       console.log(req.url);
-
-    
-   response.contentType('text/html');
-   
-   
-exec("curl http://127.0.0.1:4242/fences", function (error, stdout, stderr) {
-  // output is in stdout
-console.log(stdout);console.log(error);console.log(stderr);
-   	response.send(stdout); 
-   	console.log(stdout);
-   	
-
-});
-
-
-
-
-
-
 var server = app.listen(process.env.PORT||3000, function () {
 
-  var host = "192.168.1.107";
+  var host = "localhost";
    port = server.address().port;
 
   console.log('Server listening at http://%s:%s', host, port);
