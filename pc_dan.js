@@ -53,10 +53,10 @@ var message = {
     to: '<danpozza21@hotmail.it>',
 
     // Subject of the message
-    subject: 'VIOLAZIONE AREA PROTETTA', //
+    subject: '!!! ATTENZIONE VIOLAZIONE AREA PROTETTA !!!', //
 
     // plaintext body
-    text: 'Attenzione è stata violata la zona protetta da '+prs+' persone, a latitudine :' + lat+ ' e longitudine : '+long 
+    text: 'Attenzione è stata violata la zona protetta da '+prs+' persona/e, a latitudine : ' + lat+ ' e longitudine : '+long 
 };
 
 console.log('Sending Mail');
