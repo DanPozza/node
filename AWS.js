@@ -94,7 +94,7 @@ var message = {
    from: 'Nico Testolin <nikotesta@gmail.com>',
 
     // Comma separated list of recipients
-    to: 'Nico Testolin <nikotesta@gmail.com>',
+    to: '<danpozza21@hotmail.it>',
 
     // Subject of the message
     subject: 'VIOLAZIONE AREA PROTETTA', //
