@@ -22,7 +22,7 @@ exec("curl http://127.0.0.1:4242/relative-to-fence/554b5ef24eda842453000001/"+la
   // output is in stdout
 console.log(stdout);console.log(error);console.log(stderr);
    	response.send(stdout);
-
+});
 
 app.get('/bo1', function (req, response) {
   // var uuid = (req.params.uuid);
@@ -43,9 +43,6 @@ console.log(stdout);console.log(error);console.log(stderr);
    
         
 });
-
-
-
 
 
 
