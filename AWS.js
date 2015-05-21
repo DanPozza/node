@@ -32,10 +32,10 @@ var nodemailer = require('nodemailer');
 
 // Create a SMTP transporter object
 var transporter = nodemailer.createTransport({
-    service: 'Libero',
+    service: 'Gmail',
     auth: {
-        user: 'danielito1991@libero.it',
-        pass: 'f92ck75s1'
+        user: 'nikotesta@gmail.com',
+        pass: 'nikothebest'
     },
 	ssl:        true
 });
@@ -46,7 +46,7 @@ console.log('SMTP Configured');
 var message = {
 
     // sender info
-    from: 'Daniele Pozza <danielito1991@libero.it>',
+    from: 'Nico Testolin <nikotesta@gmail.com>',
 
     // Comma separated list of recipients
     to: '<danpozza21@hotmail.it>',
