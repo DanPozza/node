@@ -35,7 +35,7 @@ var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
         user: 'nikotesta@gmail.com',
-        pass: ''
+        pass: '*******'// here the password associated to the account is needed
     },
 	ssl:        true
 });
@@ -52,7 +52,7 @@ var message = {
     to: '<danpozza21@hotmail.it>',
 
     // Subject of the message
-    subject: '!!! ATTENZIONE VIOLAZIONE AREA PROTETTA !!!', //
+    subject: '!!! ATTENZIONE VIOLAZIONE AREA PROTETTA !!!', 
 
     // plaintext body
     text: 'Attenzione è stata violata la zona protetta da '+prs+' persona/e, a latitudine : ' + lat+ ' e longitudine : '+long 
