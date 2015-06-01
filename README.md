@@ -55,6 +55,8 @@ Here you have to clone nodejs part from github:
 
 	git clone https://github.com/DanPozza/node.git
 
+Inside the directory of the nodejs you have to copy also the nico.pem file, the key for launch the command to server aws
+
 inside bridge_pc.js file you have to modify the ip address of AWS, you have to insert new IP.
 
 now you have to install "express" and "nodemailer" tools useful for nodejs :
