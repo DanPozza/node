@@ -70,12 +70,6 @@ transporter.sendMail(message, function(error, info) {
 });
 	
 
-	
-	}
-   	
-   	
-   	
-
 });
 });
 app.get('/checkfences', function (req, response) {
