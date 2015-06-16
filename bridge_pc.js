@@ -69,7 +69,7 @@ transporter.sendMail(message, function(error, info) {
     console.log('Server responded with "%s"', info.response);
 });
 	
-}
+
 });
 });
 app.get('/checkfences', function (req, response) {
