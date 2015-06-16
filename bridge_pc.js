@@ -20,13 +20,13 @@ app.get('/:lat/:long/:prs', function (req, response) {
    response.contentType('text/html');
    
 
-exec( 'ssh -i nico.pem ubuntu@52.25.105.255 curl -H \"Accept: application/xml\" -H \"Content-Type: application/xml\" -X GET http://0.0.0.0:3000/'+lat+'/'+long+'/'+prs, function (error, stdout, stderr) {
+exec( 'ssh -i nico.pem ubuntu@52.25.21.145 curl -H \"Accept: application/xml\" -H \"Content-Type: application/xml\" -X GET http://0.0.0.0:3000/'+lat+'/'+long+'/'+prs, function (error, stdout, stderr) {
   // output is in stdout
 console.log(stdout);console.log(error);console.log(stderr);
    	response.send(stdout);
    	
    	if(stdout == '{"in_fence":true}' )
-	
+	{
 	
 var nodemailer = require('nodemailer');
 
@@ -69,7 +69,7 @@ transporter.sendMail(message, function(error, info) {
     console.log('Server responded with "%s"', info.response);
 });
 	
-
+}
 });
 });
 app.get('/checkfences', function (req, response) {
